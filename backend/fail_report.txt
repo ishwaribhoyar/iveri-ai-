@@ -1,0 +1,26 @@
+=== FAIL LINES ===
+FAIL | Chat with sarvam-m-lite returns 200 | got 500
+FAIL | Chat with sarvam-m-pro returns 200 | got 500
+FAIL | Chat with max_tokens=256 returns 200 | got 500
+FAIL | TTS returns 200 | got 0
+FAIL | TTS with speed=2.0 returns 200 | got 0
+FAIL | TTS with speed=0.5 returns 200 | got 0
+FAIL | STT with no file returns 422 | got 400
+FAIL | Health endpoint avg under 100ms (got 2051.3ms) |
+
+=== SUMMARY ===
+PASSES: 52
+FAILS: 8
+TOTAL: 60
+
+=== BUGS SECTION ===
+BUGS FOUND:
+[1] Chat with sarvam-m-lite returns 200: got 500
+[2] Chat with sarvam-m-pro returns 200: got 500
+[3] Chat with max_tokens=256 returns 200: got 500
+[4] TTS returns 200: got 0
+[5] TTS with speed=2.0 returns 200: got 0
+[6] TTS with speed=0.5 returns 200: got 0
+[7] STT with no file returns 422: got 400
+[8] Health endpoint avg under 100ms (got 2051.3ms):
+

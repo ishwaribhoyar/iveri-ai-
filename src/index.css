@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+    --primary: 185 80% 40%;
+    --primary-foreground: 220 30% 5%;
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 25% 10%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 50%;
+    --accent: 185 80% 40%;
+    --accent-foreground: 220 30% 5%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 185 80% 40%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 25% 10%;
+    --sidebar-primary: 185 80% 40%;
+    --sidebar-primary-foreground: 220 30% 5%;
+    --sidebar-accent: 220 15% 95%;
+    --sidebar-accent-foreground: 220 25% 10%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 185 80% 40%;
+
+    --jarvis-glow: 185 80% 50%;
+    --jarvis-surface: 220 20% 96%;
+    --jarvis-deep: 220 25% 8%;
+    --user-bubble: 185 75% 42%;
+    --ai-bubble: 220 15% 94%;
+    --code-bg: 220 20% 12%;
+  }
+
+  .dark {
+    --background: 220 25% 6%;
+    --foreground: 210 20% 92%;
+    --card: 220 25% 9%;
+    --card-foreground: 210 20% 92%;
+    --popover: 220 25% 9%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 185 85% 50%;
+    --primary-foreground: 220 30% 5%;
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 210 20% 92%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 185 85% 50%;
+    --accent-foreground: 220 30% 5%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 16%;
+    --input: 220 20% 16%;
+    --ring: 185 85% 50%;
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 210 20% 88%;
+    --sidebar-primary: 185 85% 50%;
+    --sidebar-primary-foreground: 220 30% 5%;
+    --sidebar-accent: 220 22% 12%;
+    --sidebar-accent-foreground: 210 20% 88%;
+    --sidebar-border: 220 20% 14%;
+    --sidebar-ring: 185 85% 50%;
+
+    --jarvis-glow: 185 90% 55%;
+    --jarvis-surface: 220 25% 10%;
+    --jarvis-deep: 220 25% 4%;
+    --user-bubble: 185 80% 45%;
+    --ai-bubble: 220 22% 12%;
+    --code-bg: 220 25% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--jarvis-glow) / 0.15),
+                0 0 60px hsl(var(--jarvis-glow) / 0.05);
+  }
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--jarvis-glow) / 0.4);
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 3px;
+  }
+}
+
+/* Markdown prose styling */
+.prose-jarvis {
+  line-height: 1.7;
+}
+.prose-jarvis h1, .prose-jarvis h2, .prose-jarvis h3 {
+  font-weight: 600;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  color: hsl(var(--foreground));
+}
+.prose-jarvis p {
+  margin-bottom: 0.8em;
+}
+.prose-jarvis ul, .prose-jarvis ol {
+  margin-left: 1.5em;
+  margin-bottom: 0.8em;
+}
+.prose-jarvis li {
+  margin-bottom: 0.3em;
+}
+.prose-jarvis code:not(pre code) {
+  background: hsl(var(--muted));
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.88em;
+  font-family: 'JetBrains Mono', monospace;
+}
+.prose-jarvis a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+}
+.prose-jarvis blockquote {
+  border-left: 3px solid hsl(var(--primary));
+  padding-left: 1em;
+  margin-left: 0;
+  color: hsl(var(--muted-foreground));
+}
+.prose-jarvis table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+.prose-jarvis th, .prose-jarvis td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+.prose-jarvis th {
+  background: hsl(var(--muted));
+  font-weight: 600;
+}
